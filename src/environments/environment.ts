@@ -2,6 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//DONDE SE GUARDA VARIABLES DE ENTORNO DE LA APP
 export const environment = {
   production: false
 };
