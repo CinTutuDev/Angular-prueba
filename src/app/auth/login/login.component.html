@@ -13,10 +13,11 @@
         y dos eventos(ngSubmit) = "saveForm() =salta cuando le das a submit /
                    (Keydown.enter) = "saveForm()" =esto es cuando se pulsa enter que se mande el form -->
       <form [formGroup]="form" autocomplete="off" novalidate
-                        (ngSubmit)="saveForm()" (keydown.enter)="saveForm">
+                        (ngSubmit)="saveForm()" (keydown.enter)="saveForm()">
 
       <mat-card-content  fxLayout="row" fxLayout.md="column" fxLayoutGap="5"
                          fxLayoutAlign="center center" fxLayoutAlign.md="start center">
+        <!------------------------ email ------------------------------------------------>
         
          <div class="email" fxFlex="50%" fxFlex.md="100%">
               <mat-form-field appearance="fill">
@@ -24,8 +25,8 @@
                 <input matInput type="email" placeholder="Tu email" formControlName="email">
               </mat-form-field>
         </div>
-              
-        <div class="email" fxFlex="50%" fxFlex.md="100%">
+              <!------------------------ pass ------------------------------------------------>
+        <div class="password" fxFlex="50%" fxFlex.md="100%">
               <mat-form-field appearance="fill" >
                 <mat-label>Password</mat-label>
                 <input matInput type="password" name="password" placeholder="tu password" formControlName="password">
@@ -34,14 +35,16 @@
       </mat-card-content>
                   <!-- ACTION -->
                   <mat-card-actions >
-                    <button mat-button type="button" (click)="goRegister()">register</button>
+                    <button mat-button>Like</button>
                   <!-- tipo submit si no se valida no se activa -->
                   <button mat-button type="submit" [disabled]="!form.valid">login</button>
                 </mat-card-actions>
-                </form>            
+   </form>    
+
       <mat-card-footer >
-        <h4>Soy los piececillos del formulario</h4>
-      
+        <button mat-stroked-button (click)="goRecovery()" class="btn footer">
+          No recuerdo el password
+        </button>
       </mat-card-footer>
  </mat-card>
 </div>

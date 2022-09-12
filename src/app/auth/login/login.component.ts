@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     ]) 
   })
 
-  constructor() { }
+  constructor(private router: Router ) { }
 
   ngOnInit(): void {
 
@@ -47,4 +47,9 @@ export class LoginComponent implements OnInit {
   goRegister = () => {
 
   }
+
+    //este es el evento del btn de ir que le lleva al login
+    goRecovery = () => {
+      this.router.navigate(['/auth/recovery']);
+    }
 }
