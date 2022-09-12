@@ -1,0 +1,23 @@
+$color-global-hover: rgb(132, 81, 5);
+
+div.root{
+ background-color: transparent;
+ margin-top: 2rem;
+}
+form{
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+}
+.ico{
+ background-image: url("../../../assets/image/ico.jpg");
+ background-size: 32px;
+ background-position: center;
+}
+mat-card-actions{
+ button:hover{
+  text-transform: lowercase;
+  font-size: large;
+  color: $color-global-hover;
+ }
+}
