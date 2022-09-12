@@ -1,4 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 $color-global-hover: rgb(132, 81, 5);
+
+
+$color-global-pink: rgb(255, 0, 153);
+$color-global-pink-dif: rgb(251, 209, 235);
+$color-global-blue: rgb(4, 211, 188);
+$color-global-orange: rgba(255, 190, 92, 0.473);
+$color-global-purple: rgb(218, 70, 255);
+$color-global-blue-dif: rgb(216, 249, 245);
+$color-gradient-footer: linear-gradient(
+  to right,
+  rgb(4, 211, 188, 0.9),
+  rgb(255, 0, 153, 0.6)
+);
+$color-gradient-views: linear-gradient(
+  to right,
+  rgb(216, 249, 245),
+  rgb(251, 209, 235)
+);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
