@@ -2,41 +2,43 @@
  para agragar mat o similares hay que hacer import se encuantran en las API de https://material.angular.io/components/card/api -->
  <mat-card fxFlex="50%" class="cardTodo" >
 
-      <mat-card-header><!-- https://material.angular.io/components/card/examples-->
-         <div mat-card-avatar class="ico"></div>
-         <mat-card-title> <h1>Login TuTu</h1> </mat-card-title>
-         <mat-card-subtitle>Loguéate para gozar</mat-card-subtitle>
-      </mat-card-header>
+        <mat-card-header><!-- https://material.angular.io/components/card/examples-->
+          <div mat-card-avatar class="ico"></div>
+          <mat-card-title> <h1>Login TuTu</h1> </mat-card-title>
+          <mat-card-subtitle>Loguéate para gozar</mat-card-subtitle>
+        </mat-card-header>
 
-     <!--  <img mat-card-image src="../../../assets/image/fumadora.jpg" alt="Photo picasso"> -->
-     <form action="">
+      <!--  <img mat-card-image src="../../../assets/image/fumadora.jpg" alt="Photo picasso"> -->
+      <!--   Creo variable de validacion /no autocompletado/no se encarge en navegador de validar
+        y dos eventos(ngSubmit) = "saveForm()"-->salta cuando le das a submit /
+                   (Keydown.enter) = "saveForm()" -->esto es cuando se pulsa enter que se mande el form -->
+      <form action=""  [formGroup]="form" autocomplete="off" novalidate
+                        (ngSubmit)="saveForm()" (keydown.enter)="saveForm">
 
-     <mat-card-content  fxLayout="row" fxLayout.md="column" fxLayoutAlign="space-around center" 
-     fxLayoutAlign.md="start center">
-     
-             <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
-              <mat-label>Email</mat-label>
-              <input matInput>
-            </mat-form-field>
+      <mat-card-content  fxLayout="row" fxLayout.md="column" fxLayoutAlign="space-around center" 
+      fxLayoutAlign.md="start center">
+      
+              <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
+                <mat-label>Email</mat-label>
+                <input matInput>
+              </mat-form-field>
 
-             <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
-              <mat-label>Password</mat-label>
-              <input matInput>
-            </mat-form-field>       
-          
-    
-        
-     </mat-card-content>
-                <!-- ACTION -->
-                <mat-card-actions >
-                 <button mat-button>LIKE</button>
-                 <button mat-button>SHARE</button>
-               </mat-card-actions>
-              </form>            
-    <mat-card-footer >
-      <h4>Soy los piececillos del formulario</h4>
-    
-    </mat-card-footer>
-
+              <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
+                <mat-label>Password</mat-label>
+                <input matInput>
+              </mat-form-field>       
+            
+      </mat-card-content>
+                  <!-- ACTION -->
+                  <mat-card-actions >
+                  <button mat-button>LIKE</button>
+                  <!-- tipo submit si no se valida no se activa -->
+                  <button mat-button type="submit" [disabled]="!form.valid">SHARE</button>
+                </mat-card-actions>
+                </form>            
+      <mat-card-footer >
+        <h4>Soy los piececillos del formulario</h4>
+      
+      </mat-card-footer>
  </mat-card>
 </div>

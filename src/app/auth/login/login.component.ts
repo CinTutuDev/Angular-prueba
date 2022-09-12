@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  /* form es el nombre del evento del formulario 
+      es un obj de tipo FormGroup y inicializo funcion statica donde valido el formulario*/
+  public form: FormGroup = new FormGroup({
+    email: new FormGroup("", [
+      Validators.required,
+      Validators.pattern("['^a-zA-Z0-9']*"),
+      Validators.maxLength(150)
+    ]),
+    password: new FormGroup("",  [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(150)
+    ]) 
+  })
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  saveForm = () => {
+    
+  }
 }
