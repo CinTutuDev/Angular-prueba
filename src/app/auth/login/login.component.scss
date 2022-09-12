@@ -1,4 +1,4 @@
-$color-global-hover: rgb(132, 81, 5);
+$color-global-hover: rgb(12, 12, 12);
 
 div.root{
  background-color: transparent;
@@ -14,7 +14,7 @@ form{
  background-size: 32px;
  background-position: center;
 }
-mat-card-actions{
+mat-card-actions,mat-card-footer {
  button:hover{
   text-transform: lowercase;
   font-size: large;

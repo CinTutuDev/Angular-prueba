@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
       es un obj de tipo FormGroup y inicializo funcion statica donde valido el formulario*/
   public form: FormGroup = new FormGroup({
     
-    email: new FormGroup("", [
+    email: new FormControl("user@email.com", [
       Validators.required,
       Validators.email,
       Validators.maxLength(150)
     ]),
-    password: new FormGroup("",  [
+    password: new FormControl("",  [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(150)
@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     const obj = {
-      email: "hola@mundo.com",
+      email : "user@.angular.com",
       password: "1234"
     }
-    this.form.patchValue(obj)
+   /*  this.form.patchValue(obj) */
   }
 
 
