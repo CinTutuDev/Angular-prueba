@@ -10,14 +10,14 @@
 
       <!--  <img mat-card-image src="../../../assets/image/fumadora.jpg" alt="Photo picasso"> -->
       <!--   Creo variable de validacion /no autocompletado/no se encarge en navegador de validar
-        y dos eventos(ngSubmit) = "saveForm()"-->salta cuando le das a submit /
-                   (Keydown.enter) = "saveForm()" -->esto es cuando se pulsa enter que se mande el form -->
-      <form action=""  [formGroup]="form" autocomplete="off" novalidate
+        y dos eventos(ngSubmit) = "saveForm() =salta cuando le das a submit /
+                   (Keydown.enter) = "saveForm()" =esto es cuando se pulsa enter que se mande el form -->
+      <form [formGroup]="form" autocomplete="off" novalidate
                         (ngSubmit)="saveForm()" (keydown.enter)="saveForm">
 
-      <mat-card-content  fxLayout="row" fxLayout.md="column" fxLayoutAlign="space-around center" 
-      fxLayoutAlign.md="start center">
-      
+      <mat-card-content  fxLayout="row" fxLayout.md="column" fxLayoutGap="5"
+                         fxLayoutAlign="center center" fxLayoutAlign.md="start center">
+        
               <mat-form-field appearance="fill" fxFlex="50%" fxFlex.md="100%">
                 <mat-label>Email</mat-label>
                 <input matInput>
