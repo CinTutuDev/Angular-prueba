@@ -5,21 +5,24 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-
-  static currentUser = null
+  //currentUser = actualUsuario
+ /*  static currentUser = null; */
 
   constructor() {}
 
-  //creo funciones de sistemas de login
+  //creo funciones de sistemas de login(acceso)
+  //recojo y guardo info del localStorage(clave valor)
+  //despues hay que ir a login.component.ts, añadir al constructor AuthService
   login = (user: any) => {
-    AuthService.currentUser = user
-  }
-
+    localStorage.setItem('currentUser', user);
+  };
+  //recojo y borro clave = para cerrar sesion
   logout = () => {
-    AuthService.currentUser = null
-  }
+    localStorage.removeItem('currentUser');
+  };
 
-  isLoged = ():boolean => {
-    return ( AuthService.currentUser === null)
-  }
-} 
+  //esta logeado devuelve valor de la clave
+  isLoged = (): boolean => {
+    return localStorage.getItem('currentUser') === null;
+  };
+}
