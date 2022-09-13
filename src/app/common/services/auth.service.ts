@@ -22,4 +22,4 @@ export class AuthService {
   isLoged = ():boolean => {
     return ( AuthService.currentUser === null)
   }
-}
+} 
