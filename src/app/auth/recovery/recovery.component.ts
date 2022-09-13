@@ -12,12 +12,15 @@ export class RecoveryComponent implements OnInit {
       es un obj de tipo FormGroup y inicializo funcion statica donde valido el formulario*/
   email: string = '';
   public form: FormGroup = new FormGroup({
+
     email: new FormControl('', [
       Validators.required,
       Validators.email,
       Validators.maxLength(150),
     ]),
   });
+
+  //creo el ruter para navegacion e importo
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
@@ -27,7 +30,7 @@ export class RecoveryComponent implements OnInit {
     console.log('saveForm', values);
   };
 
-  //este es el evento del btn de ir que le lleva al login
+  //este es el evento del btn de ir que le lleva al login es para navegar entre ellos
   goLogin = () => {
     this.router.navigate(['/auth/login']);
   };
