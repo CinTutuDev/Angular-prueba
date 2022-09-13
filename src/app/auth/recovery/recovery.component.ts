@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/common/services/auth.service';
 
 @Component({
   selector: 'app-recovery',
@@ -21,7 +22,7 @@ export class RecoveryComponent implements OnInit {
   });
 
   //creo el ruter para navegacion e importo
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service: AuthService) {}
 
   ngOnInit(): void {}
 
