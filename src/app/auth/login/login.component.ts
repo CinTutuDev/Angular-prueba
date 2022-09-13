@@ -32,8 +32,24 @@ export class LoginComponent implements OnInit {
       email: 'user@.angular.com',
       password: '1234',
     };
-    /*  this.form.patchValue(obj) */
+      this.form.patchValue(obj) 
+
+        //creo un listener con el form para recoger los errores del formulario
+        //valueChanges = devuelve la info actual del formulario
+        //para los erores = controls son las keys
+        this.form.valueChanges.subscribe((data)=>{
+        /*console.log(data); */
+          const ctrls = this.form.controls
+          Object.keys(ctrls).forEach(ctrlName => {
+            /* console.log('controler', ctrl); */
+           const errors = this.form.get(ctrlName)?.errors || []
+           console.log(ctrlName, errors); 
+          });
+        })
   }
+
+
+
 
   saveForm = () => {
     const values = this.form.value;
