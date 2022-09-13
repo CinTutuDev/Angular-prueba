@@ -7,7 +7,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';/*  lo carga de bootstrap: [AppComponent] */
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
-import { SharedModule } from "./common/shared/shared.module";
+import { SharedModule } from "./common/common/shared/shared.module";
 
 @NgModule({
   declarations: [
