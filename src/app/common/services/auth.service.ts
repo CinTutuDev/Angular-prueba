@@ -12,7 +12,11 @@ export class AuthService {
 
   //creo funciones de sistemas de login(acceso)
   //recojo y guardo info del localStorage(clave valor)
+<<<<<<< HEAD
   //despues hay que ir a login.component.ts, añadir al constructor AuthService + import
+=======
+  //despues hay que ir a login.component.ts, añadir al constructor AuthService
+>>>>>>> e8e12706e930d440f49e0e3eccbb1bb74839ce8c
   login = (user: any) => {
     localStorage.setItem('currentUser', user);
   };
