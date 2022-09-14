@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     email: new FormControl('user@email.com', [
       Validators.required,
-      Validators.email,
+      /* Validators.email, */
       Validators.maxLength(150),
     ]),
     password: new FormControl('', [
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       Validators.maxLength(150),
     ]),
   });
-
+    /* le paso la clse common/services/auth.service = AuthService y lo uso en mis funciones = saveForm...*/
   constructor(private router: Router, private service: AuthService) {}
 
   ngOnInit(): void {
@@ -52,8 +52,10 @@ export class LoginComponent implements OnInit {
   saveForm = () => {
     const values = this.form.value;
     console.log('saveForm', values);
+    this.service.login(values)
+    this.router.navigate(['/admin'])
   };
-  goRegister = () => {};
+  goRegister = () => {this.router.navigate(['/auth/register']);};
   //este es el evento del btn de ir que le lleva al login
   goRecovery = () => {
     this.router.navigate(['/auth/recovery']);
