@@ -12,12 +12,12 @@
         fxLayoutAlign.md="start center">
         
         <mat-form-field appearance="fill" fxFlex="100%" fxFlex.md="100%">
-         <mat-label>Email</mat-label>
+         <mat-label>Email</mat-label> <!--[(ngModel)]="email" = es la variable ...email a al que se llama en el ts -->
          <input matInput type="email" placeholder="Tu Email" [(ngModel)]="email">
        </mat-form-field>
               
       </mat-card-content>
-      <mat-card-actions >
+      <mat-card-actions >                    <!--doRecovery = son funciones de eventos -->
        <button mat-button type="submit" (click)="doRecovery()">Recovery</button>
      </mat-card-actions>
  

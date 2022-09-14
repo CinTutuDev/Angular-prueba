@@ -35,6 +35,7 @@ export class RecoveryComponent implements OnInit {
   goLogin = () => {
     this.router.navigate(['/auth/login']);
   };
+  /* declaramo la funcion del evento donde se captura el email y se muestra por consola */
   doRecovery = () => {
     console.log('Recoveyr', this.email);
   };
