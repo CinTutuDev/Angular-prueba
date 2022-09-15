@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     email: new FormControl('user@email.com', [
       Validators.required,
-      /* Validators.email, */
+      Validators.email,
       Validators.maxLength(150),
     ]),
     password: new FormControl('', [
@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     const obj = {
-      email: 'user@.angular.com',
-      password: '1234',
+      email: 'user@angular.com',
+      password: '1234CTC',
     };
     this.form.patchValue(obj);
 
@@ -39,20 +39,22 @@ export class LoginComponent implements OnInit {
     //valueChanges = devuelve la info actual del formulario
     //para los erores = controls son las keys
     this.form.valueChanges.subscribe((data) => {
-      /*console.log(data); */
+      console.log('los datos son',data);
       const ctrls = this.form.controls;
       Object.keys(ctrls).forEach((ctrlName) => {
         /* console.log('controler', ctrl); */
         const errors = this.form.get(ctrlName)?.errors || [];
-        console.log(ctrlName, errors);
+        console.log('controlador de erores',ctrlName, errors);
       });
     });
   }
 
+  /* es el ngSubmit del Submit */
   saveForm = () => {
     const values = this.form.value;
     console.log('saveForm', values);
     this.service.login(values)
+    console.log('los values son', values);
     this.router.navigate(['/admin'])
   };
   goRegister = () => {this.router.navigate(['/auth/register']);};

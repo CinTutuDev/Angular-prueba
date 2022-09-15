@@ -21,6 +21,7 @@ export class AuthGuard implements CanActivate {
     //estado actual y lo que devuelve ...Observable
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       // TODO:FIXED: crear un servicio para gestionar esto
+      //fincion del auth.service.ts
     return this.service.isLoged();
   }
   

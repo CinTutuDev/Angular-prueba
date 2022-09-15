@@ -12,8 +12,9 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-    /* para controlar el logeo del usuario = solo se puede logear de una forma: el atributo del obj es canActivate 
-    y le mandamos un AuthGuard. Para ello creo guards dentro de common se crea con los comandos "$ ng g guard common/guards/auth"*/
+    /* para CONTROLAR LOGEO del usuario = solo se puede logear de una forma: el atributo del obj es canActivate 
+    y le mandamos un AuthGuard. Para ello creo guards dentro de common se crea con los comandos "$ ng g guard common/guards/auth"
+     1º common/guards/  y creo -> $ ng g guard common/guards/auth*/
     canActivate : [AuthGuard]
   },
   {path: 'inicio',  component: InicioComponent },

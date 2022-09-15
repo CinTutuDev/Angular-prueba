@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-//es para que pueda ser importada
+//es para que pueda ser importada/inyectada en otro sitio
 @Injectable({
   providedIn: 'root',
 })
@@ -23,6 +23,6 @@ export class AuthService {
 
   //esta logeado devuelve valor de la clave
   isLoged = (): boolean => {
-    return localStorage.getItem('currentUser') === null;
+    return localStorage.getItem('currentUser') !== null;
   };
 }
